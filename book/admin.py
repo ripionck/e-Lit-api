@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.text import slugify
-from .models import Book
+from .models import Book, Author
 
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'publication_date', 'price', 'slug')
@@ -15,3 +15,4 @@ class BookAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
 admin.site.register(Book, BookAdmin)
+admin.site.register(Author)
