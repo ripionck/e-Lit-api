@@ -12,7 +12,7 @@ POST /publisher/ - Create a new publisher
 GET /publisher/{pk}/ - Retrieve an publisher by ID
 PUT /publisher/{pk}/ - Update an publisher by ID
 PATCH /publisher/{pk}/ - Partially update an publisher by ID
-DELETE /publisher/{pk}/ - Delete an publisher by ID
+DELETE /publisher/{pk}/ - Delete a publisher by ID
 
 """
 

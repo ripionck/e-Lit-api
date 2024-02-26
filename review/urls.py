@@ -6,8 +6,8 @@ router = DefaultRouter()
 router.register('review', ReviewViewSet, basename='book-reviews')
 
 """
-/review/ - (GET, POST)
-/review/?book_id=1 - (GET, PUT, PATCH, DELETE)
+POST /review/ - Create a new publisher
+GET  /review/?book_id={book_id} - Retrieve a review by book ID
 """
 urlpatterns = [
     path('', include(router.urls)),
