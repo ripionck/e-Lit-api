@@ -12,6 +12,19 @@ class ReviewViewSet(ModelViewSet):
     serializer_class = ReviewSerializer
     permission_classes = [IsAuthenticatedOrReadOnly]
 
+    def get_queryset(self):
+        book_id = self.request.query_params.get('book_id')
+        if book_id is None:
+            return Review.objects.none()
+
+        try:
+            # Filter reviews by the provided book ID
+            queryset = Review.objects.filter(book_id=book_id)
+        except Review.DoesNotExist:
+            return Response({"message": "Reviews not found for the given book ID"}, status=status.HTTP_404_NOT_FOUND)
+
+        return queryset
+
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -42,3 +55,7 @@ class ReviewViewSet(ModelViewSet):
         serializer.save()
 
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+
+

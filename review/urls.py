@@ -7,7 +7,7 @@ router.register('review', ReviewViewSet, basename='book-reviews')
 
 """
 /review/ - (GET, POST)
-/review/{pk}/ - (GET, PUT, PATCH, DELETE)
+/review/?book_id=1 - (GET, PUT, PATCH, DELETE)
 """
 urlpatterns = [
     path('', include(router.urls)),
