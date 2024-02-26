@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'author',
     'book',
     'publisher',
+    'review',
 ]
 
 REST_FRAMEWORK = {
