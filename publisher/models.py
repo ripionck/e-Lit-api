@@ -7,7 +7,6 @@ class Publisher(models.Model):
     name= models.CharField(max_length=100)
     logo = models.ImageField(default='default.jpg', upload_to='publisher/images/')
     address = models.TextField()
-    is_publisher = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

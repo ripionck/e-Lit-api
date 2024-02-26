@@ -1,18 +1,18 @@
 from django.urls import path, include
 from rest_framework import routers
-from .views import AuthorViewSet
+from .views import BookViewSet
 
 
 router = routers.DefaultRouter()
-router.register('author', AuthorViewSet, basename='author')
+router.register('book', BookViewSet, basename='book')
 
 """
-GET /author/ - List all authors
-POST /author/ - Create a new author
-GET /author/{pk}/ - Retrieve an author by ID
-PUT /author/{pk}/ - Update an author by ID
-PATCH /author/{pk}/ - Partially update an author by ID
-DELETE /author/{pk}/ - Delete an author by ID
+GET /book/ - List all books
+POST /book/ - Create a new book
+GET /book/{pk}/ - Retrieve an book by ID
+PUT /book/{pk}/ - Update an book by ID
+PATCH /book/{pk}/ - Partially update an book by ID
+DELETE /book/{pk}/ - Delete an book by ID
 
 """
 
