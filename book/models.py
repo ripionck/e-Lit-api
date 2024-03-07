@@ -2,9 +2,11 @@ from django.db import models
 from publisher.models import Publisher
 from author.models import Author
 from django.utils.text import slugify
+import uuid
 
 # Create your models here.
 class Book(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
     genre = models.CharField(max_length=100)
