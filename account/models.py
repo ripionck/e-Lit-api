@@ -26,7 +26,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     avatar = models.ImageField(default='default.jpg', upload_to='account/images/')
     phone = models.CharField(max_length=12)
-    balance = models.DecimalField(max_digits=10, decimal_places=2)
+    balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     is_publisher = models.BooleanField(default=False)
 
     objects = CustomUserManager()

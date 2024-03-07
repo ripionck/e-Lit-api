@@ -28,6 +28,7 @@ SECRET_KEY = 'django-insecure-+!dk06lz7pjknrrx%rg7sc9+k@0&83z10-)3^)#@9nm@@6&vqc
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'account.CustomUser'
 
 
 # Application definition
@@ -48,7 +49,6 @@ INSTALLED_APPS = [
     'review',
 ]
 
-AUTH_USER_MODEL = 'account.CustomUser'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
