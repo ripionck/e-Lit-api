@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-+!dk06lz7pjknrrx%rg7sc9+k@0&83z10-)3^)#@9nm@@6&vqc
 DEBUG = True
 
 ALLOWED_HOSTS = []
-AUTH_USER_MODEL = 'account.CustomUser'
+AUTH_USER_MODEL = 'user.CustomUser'
 
 
 # Application definition
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
-    'account',
+    'user',
     'author',
     'book',
     'publisher',

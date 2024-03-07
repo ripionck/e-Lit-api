@@ -14,7 +14,7 @@ class Book(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
     publication_date=models.DateField()
-    cover = models.ImageField(default='default.jpg', upload_to='book/covers/')
+    cover = models.ImageField(default='default.jpg', upload_to='book/book_covers/')
     isbn = models.CharField(max_length=13, unique=True)
     edition = models.CharField(max_length = 100)
     page_count = models.IntegerField()
