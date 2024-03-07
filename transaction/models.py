@@ -15,6 +15,9 @@ class Transaction(models.Model):
     type = models.CharField(choices=TRANSACTION_TYPE, max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.user.username} - {self.amount}'
+
 class Cart(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
@@ -24,3 +27,6 @@ class Cart(models.Model):
     def save(self, *args, **kwargs):
         self.amount = self.book.price * self.amount
         super().save(*args, *kwargs)
+
+    def __str__(self):
+        return f'{self.user.username} - {self.amount}'

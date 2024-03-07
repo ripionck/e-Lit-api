@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'book',
     'publisher',
     'review',
+    'transaction',
 ]
 
 AUTHENTICATION_BACKENDS = [
